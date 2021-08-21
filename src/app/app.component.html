@@ -1,3 +1,32 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+
+  <!--Menu hamburguesa-->
+  <ion-menu side="start" menuId="first" contentId="main">
+    <ion-header>
+      <ion-toolbar >
+        <ion-avatar>
+          <ion-img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y"></ion-img>
+        </ion-avatar>
+        <ion-title>Title</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-menu-toggle>
+          <ion-item routerLink='/inicio'>Inicio</ion-item>
+          <ion-item routerLink='/menu'>Menu</ion-item>
+          <ion-item>Favorito</ion-item>
+          <ion-item>Mis pedidos</ion-item>
+          <ion-item>Cupones</ion-item>
+          <hr>
+          <ion-item routerLink='/perfil'>Perfil</ion-item>
+          <ion-item>Sesion</ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+
+
+  <ion-router-outlet id="main"></ion-router-outlet>
 </ion-app>

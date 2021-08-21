@@ -1,0 +1,16 @@
+<app-header-menu titulo='Perfil'></app-header-menu>
+
+<ion-content class="ion-padding">
+    <ion-title id="titulo">Informacion Personal</ion-title>
+    <div class="contenedor" id="info">
+        <div id="cosas">
+            <ion-grid>
+                <ion-row *ngFor='let u of usuario'>
+                    <ion-col size="6">Nombre</ion-col>
+                    <ion-col size="6">{{u.nombre}}</ion-col>
+                </ion-row>
+            </ion-grid>
+        </div>
+    </div>
+
+</ion-content>

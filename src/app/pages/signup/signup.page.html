@@ -1,0 +1,85 @@
+<app-header titulo='Registrate'></app-header>
+
+<ion-content class="ion-padding">
+    <!--CONTENEDOR PRINCIPAL-->
+    <div class="contenedor">
+        <!--Contenedor formulario-->
+        <div class="contenedor" id="formulario">
+            <form #formulario='ngForm' (ngSubmit)='enviar()'>
+                <ion-list-header>
+                    <ion-label>Formulario: {{formulario.valid}}</ion-label>
+                </ion-list-header>
+
+                <!--Nombre-->
+                <ion-item class="ion-margin">
+                    <ion-input type="text"
+                    placeholder="Nombre completo"
+                    name='nombre'
+                    [(ngModel)]="usuario.nombre"
+                    required
+                    ></ion-input>
+                </ion-item>
+
+                <!--Correo-->
+                <ion-item class="ion-margin">
+                    <ion-input type="email"
+                    placeholder="Correo"
+                    name='email'
+                    [(ngModel)]="usuario.correo"
+                    pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+                    required
+                    ></ion-input>
+                </ion-item>
+
+                <!--Contrasena-->
+                <ion-item class="ion-margin">
+                    <ion-input type="text"
+                    placeholder="Contrasena"
+                    name='pass'
+                    [(ngModel)]="usuario.pass"
+                    required
+                    ></ion-input>
+                </ion-item>
+
+                <!--Direccion-->
+                <ion-item class="ion-margin">
+                    <ion-input type="text"
+                    placeholder="Direccion"
+                    name='dire'
+                    [(ngModel)]="usuario.dire"
+                    required
+                    ></ion-input>
+                </ion-item>
+
+                <ion-button [disabled]='formulario.invalid'
+                type='submit' expand="block" shape="round">
+                <ion-icon name="log-in-outline" slot="start"></ion-icon>
+                crear cuenta 
+                </ion-button>
+            </form>
+        </div>
+        <!--Fin contenedor formulario-->
+
+        <div class="contenedor" id="varias">
+            <hr class="separacion">
+            <!--Facebook-->
+            <div class="boton" id="facebook">
+            <ion-button (click)="facebook()" expand="block" shape="round">
+                <ion-icon name="logo-facebook" slot="start"></ion-icon>
+                Iniciar Sesion con facebook
+            </ion-button>
+            </div>
+        
+            <!--Google-->
+            <div class="boton" id="google">
+            <ion-button (click)="google()" expand="block" shape="round">
+                <ion-icon name="logo-google" slot="start"></ion-icon>
+                Iniciar Sesion con google
+            </ion-button>
+            </div>
+
+        </div>
+    </div>
+
+
+</ion-content>

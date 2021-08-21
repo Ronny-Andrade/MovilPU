@@ -1,0 +1,77 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar >
+    <ion-title  slot="start">Inicia sesión</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+<!--CONTENEDOR PRINCIPAL-->
+<div class="contenedor" id="principal">
+  <!--Primer contenedor con el formulario e inicio de sesion-->
+  <div class="contendor" id="c1">
+    <form #formulario='ngForm' (ngSubmit)='enviar()' >
+
+      <ion-list-header>
+        <ion-label>Formulario valido: {{formulario.valid}}</ion-label>
+      </ion-list-header>
+
+      <ion-item class="ion-margin">
+        <ion-input type="email"
+        placeholder="Correo"
+        name='email'
+        [(ngModel)]="usuario.email"
+        pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+        required
+        ></ion-input>
+      </ion-item>
+
+      <ion-item class="ion-margin">
+        <ion-input type="password"
+        placeholder="Contrasena"
+        name='password'
+        [(ngModel)]="usuario.pass"
+        required
+        ></ion-input>
+      </ion-item>
+
+      <ion-button [disabled]='formulario.invalid'
+      type='submit' expand="block" shape="round">
+        <ion-icon name="log-in-outline" slot="start"></ion-icon>
+        Iniciar Sesion
+      </ion-button>
+
+    </form>
+    <p>¿Olvidaste tu contraseña? <a class="vinculoLogin" routerLink='#'>Recuperar contraseña</a></p>
+  </div>
+  <!--FIN CONTENEDOR 1-->
+
+  <!--Segundo contenedor, otras formas de inicio-->
+  <div class="contenedor" id="c2">
+
+    <hr class="separacion">
+    <!--Facebook-->
+    <div class="boton" id="facebook">
+      <ion-button (click)="facebook()" expand="block" shape="round">
+        <ion-icon name="logo-facebook" slot="start"></ion-icon>
+        Iniciar Sesion con facebook
+      </ion-button>
+    </div>
+
+    <!--Google-->
+    <div class="boton" id="google">
+      <ion-button (click)="google()" expand="block" shape="round">
+        <ion-icon name="logo-google" slot="start"></ion-icon>
+        Iniciar Sesion con google
+      </ion-button>
+    </div>
+    <!--Preguntas-->
+    <div>
+      <p>¿Aun no tienes una cuenta? <a class="vinculoLogin" routerLink='/signup'>Registrate ahora</a></p>
+      <hr class="separacion">
+      <p>Entra como <a class="vinculoLogin" href="#">invitado</a></p>
+    </div>
+  </div>
+  <!--FIN CONTENEDOR 2-->
+</div>
+<!--FIN CONTENEDOR PRINCIPAL-->
+</ion-content>
