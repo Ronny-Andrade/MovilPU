@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuService } from '../../services/menu.service';
 
 @Component({
   selector: 'app-inicio',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InicioPage implements OnInit {
 
-  constructor() { }
+  ofertas:any
+  constructor(private oferta:MenuService) { }
 
   ngOnInit() {
+    this.ofertas = this.oferta.getMenu()
   }
 
   slideOptsOne = {

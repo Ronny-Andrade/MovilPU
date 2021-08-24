@@ -1,6 +1,45 @@
-<app-header-menu titulo='Menu'></app-header-menu>
+<ion-header>
+    <!--Toolbar-->
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button menu="first"></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Menu</ion-title>
+    </ion-toolbar>
+    <!--Segment-->
+    <ion-segment (ionChange)="segmentChanged($event)">
+        <ion-segment-button *ngFor='let tipo of tipoProducto | async'>
+            <ion-label>{{tipo.nombre}}</ion-label>
+        </ion-segment-button>
+    </ion-segment>
 
-<ion-content>
-  
+</ion-header>
 
+<ion-content class="ion-padding">
+
+<div class="contenedor" id="principal">
+    <!--Buscador-->
+    <div class="contenedor" id="buscador">
+        <ion-searchbar 
+        placeholder="Buscar plato"
+        inputmode="text"
+        animated
+        (ionChange)='buscar( $event )'
+        [debounce]='250'
+        ></ion-searchbar>
+    </div>    
+    <!--Menu-->
+    <div class="contendor" 
+        id="menu"
+        *ngFor="let principal of alimentos | async | filtro:textoBuscar:'nombre' ">
+            <ion-card>
+                <ion-card-header>
+                    <img src='{{principal.imagen}}'>
+                    <ion-card-title>{{principal.nombre}}</ion-card-title>
+                    <ion-card-subtitle>{{principal.descripcion}}</ion-card-subtitle>
+                    <ion-card-subtitle>${{principal.precio}}</ion-card-subtitle>
+                </ion-card-header>
+            </ion-card>
+    </div>
+</div>
 </ion-content>

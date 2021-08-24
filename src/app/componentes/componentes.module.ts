@@ -6,6 +6,7 @@ import { InputComponent } from './input/input.component';
 import { BotonsComponent } from './botons/botons.component';
 import { FormsModule } from '@angular/forms';
 import { HeaderMenuComponent } from './header-menu/header-menu.component';
+import { HeaderMenuSearchComponent } from './header-menu-search/header-menu-search.component';
 
 
 
@@ -14,13 +15,15 @@ import { HeaderMenuComponent } from './header-menu/header-menu.component';
     HeaderComponent,
     InputComponent,
     BotonsComponent,
-    HeaderMenuComponent
+    HeaderMenuComponent,
+    HeaderMenuSearchComponent
   ],
   exports:[
     HeaderComponent,
     InputComponent,
     BotonsComponent,
-    HeaderMenuComponent
+    HeaderMenuComponent,
+    HeaderMenuSearchComponent
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,15 @@
+<ion-header class="ion-padding">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="first"></ion-menu-button>
+    </ion-buttons>
+
+    <ion-searchbar 
+    placeholder="Buscar plato"
+    inputmode="text"
+    animated
+    (ionChange)='buscar( $event )'
+    [debounce]='250'
+    ></ion-searchbar>
+  </ion-toolbar>
+</ion-header>

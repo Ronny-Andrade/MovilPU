@@ -8,6 +8,7 @@ import { MenuPageRoutingModule } from './menu-routing.module';
 
 import { MenuPage } from './menu.page';
 import { ComponentesModule } from '../../componentes/componentes.module';
+import { PipesModule } from '../../pipes/pipes.module';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { ComponentesModule } from '../../componentes/componentes.module';
     FormsModule,
     IonicModule,
     MenuPageRoutingModule,
-    ComponentesModule
+    ComponentesModule,
+    PipesModule
   ],
   declarations: [MenuPage]
 })

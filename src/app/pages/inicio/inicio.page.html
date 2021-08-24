@@ -4,38 +4,23 @@
 <div class="contenedor">
     <div class="contenedor" id="slides">
         <ion-slides mode="ios" pager="ios" [options]="slideOptsOne" >
-            <ion-slide>
+            <ion-slide *ngFor="let o of ofertas | async">
                 <ion-card>
-                    <ion-card-content>
-                    <ion-img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y"></ion-img>
-                    <h2> Titulo</h2>
-                    <h4>Precio</h4>
-                    </ion-card-content>
+                    <ion-card-header>
+                        <img class="imagen" src='{{o.imagen}}'>
+                        <ion-card-title>{{o.nombre}}</ion-card-title>
+                        <ion-card-subtitle>{{o.descripcion}}</ion-card-subtitle>
+                        <ion-card-subtitle>${{o.precio}}</ion-card-subtitle>
+                    </ion-card-header>
                 </ion-card>
             </ion-slide>
-
-            <ion-slide>
-                <ion-card>
-                    <ion-card-content>
-                    <ion-img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y"></ion-img>
-                    <h2> Titulo</h2>
-                    <h4>Precio</h4>
-                    </ion-card-content>
-                </ion-card>
-            </ion-slide>
-
-            <ion-slide>
-                <ion-card>
-                    <ion-card-content>
-                    <ion-img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y"></ion-img>
-                    <h2> Titulo</h2>
-                    <h4>Precio</h4>
-                    </ion-card-content>
-                </ion-card>
-            </ion-slide>
-
         </ion-slides>
     </div>
+
 </div>
 
 </ion-content>
+
+<ion-footer class="ion-padding">
+<p> Siguenos en: <a href="https://www.facebook.com/ROUPARRILLA/?locale2=es_LA"><ion-icon name="logo-facebook"></ion-icon></a></p>
+</ion-footer>
