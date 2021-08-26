@@ -27,4 +27,9 @@ export class MenuPage implements OnInit {
   segmentChanged(event){
     console.log(event)
   }
+
+  mostrarData(id) {
+    console.log(id)
+    this.menu.getProductoById(id).subscribe(res => console.log(res), err => console.error(err));
+  }
 }

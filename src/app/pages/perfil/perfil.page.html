@@ -1,16 +1,47 @@
-<app-header-menu titulo='Perfil'></app-header-menu>
+<ion-toolbar color="primary">
+        
+    <ion-title>Perfil</ion-title>
+</ion-toolbar>
 
 <ion-content class="ion-padding">
     <ion-title id="titulo">Informacion Personal</ion-title>
-    <div class="contenedor" id="info">
+    <div class="contenedor" id="info" *ngFor='let u of usuarios | async'>
         <div id="cosas">
             <ion-grid>
-                <ion-row *ngFor='let u of usuario'>
-                    <ion-col size="6">Nombre</ion-col>
-                    <ion-col size="6">{{u.nombre}}</ion-col>
+                <ion-row >
+                    <ion-list>
+
+                    </ion-list>
+                
+                   
+                    
                 </ion-row>
             </ion-grid>
         </div>
     </div>
 
 </ion-content>
+<ion-footer>
+    <ion-toolbar>
+        <ion-tabs>
+            <ion-tab-bar slot="bottom" color="primary">
+              <ion-tab-button routerLink="/inicio">
+                <ion-icon name="home-outline"></ion-icon>
+                <ion-label>Home</ion-label>
+              </ion-tab-button>
+          
+              <ion-tab-button routerLink="/menu">
+                <ion-icon name="restaurant-outline"></ion-icon>
+                <ion-label>Menú</ion-label>
+              </ion-tab-button>
+          
+              <ion-tab-button routerLink="/perfil">
+                <ion-icon name="person"></ion-icon>
+                <ion-label>Perfil</ion-label>
+              </ion-tab-button>
+          
+             
+            </ion-tab-bar>
+          </ion-tabs>
+    </ion-toolbar>
+</ion-footer>

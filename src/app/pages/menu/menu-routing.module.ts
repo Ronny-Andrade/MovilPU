@@ -7,7 +7,11 @@ const routes: Routes = [
   {
     path: '',
     component: MenuPage
+  },  {
+    path: 'menuinfo',
+    loadChildren: () => import('./menuinfo/menuinfo.module').then( m => m.MenuinfoPageModule)
   }
+
 ];
 
 @NgModule({

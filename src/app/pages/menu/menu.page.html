@@ -1,9 +1,7 @@
 <ion-header>
     <!--Toolbar-->
-    <ion-toolbar>
-        <ion-buttons slot="start">
-            <ion-menu-button menu="first"></ion-menu-button>
-        </ion-buttons>
+    <ion-toolbar color="primary">
+        
         <ion-title>Menu</ion-title>
     </ion-toolbar>
     <!--Segment-->
@@ -31,8 +29,8 @@
     <!--Menu-->
     <div class="contendor" 
         id="menu"
-        *ngFor="let principal of alimentos | async | filtro:textoBuscar:'nombre' ">
-            <ion-card>
+        *ngFor="let principal of alimentos | async | filtro:textoBuscar:'nombre' " routerLink="/menu/info/{{principal.idproducto}}">
+            <ion-card (click)="mostrarData(principal.idproducto)">
                 <ion-card-header>
                     <img src='{{principal.imagen}}'>
                     <ion-card-title>{{principal.nombre}}</ion-card-title>
@@ -41,5 +39,35 @@
                 </ion-card-header>
             </ion-card>
     </div>
+    
 </div>
+<ion-fab vertical="top" horizontal="end" slot="fixed">
+    <ion-fab-button>
+        <ion-icon name="cart"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>
+<ion-footer>
+    <ion-toolbar>
+        <ion-tabs>
+            <ion-tab-bar slot="bottom" color="primary">
+              <ion-tab-button routerLink="/inicio">
+                <ion-icon name="home-outline"></ion-icon>
+                <ion-label>Home</ion-label>
+              </ion-tab-button>
+          
+              <ion-tab-button routerLink="/menu">
+                <ion-icon name="restaurant-outline"></ion-icon>
+                <ion-label>Menú</ion-label>
+              </ion-tab-button>
+          
+              <ion-tab-button routerLink="/perfil">
+                <ion-icon name="person"></ion-icon>
+                <ion-label>Perfil</ion-label>
+              </ion-tab-button>
+          
+             
+            </ion-tab-bar>
+          </ion-tabs>
+    </ion-toolbar>
+</ion-footer>

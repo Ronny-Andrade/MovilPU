@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
   selector: 'app-perfil',
@@ -7,27 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PerfilPage implements OnInit {
 
-  constructor() { }
+  usuarios:any;
+
+  constructor(private perfil:UsuarioService) { }
 
   ngOnInit() {
+    this.usuarios = this.perfil.getUsuarios();
   }
-  variables =[
-    {
-      nombre:'Nombre',
-      pass:'Contrasena',
-      email:'Correo',
-      direccion:'Direccion'
-    }
-  ]
-
-  usuario =[
-    {
-      nombre:'Usuario',
-      pass:'usuario123',
-      email:'usuario@gmail.com',
-      direccion:'Alborada'
-    }
-  ]
-
-
+  
 }

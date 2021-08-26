@@ -7,6 +7,7 @@ import { BotonsComponent } from './botons/botons.component';
 import { FormsModule } from '@angular/forms';
 import { HeaderMenuComponent } from './header-menu/header-menu.component';
 import { HeaderMenuSearchComponent } from './header-menu-search/header-menu-search.component';
+import { TabButtonComponent } from './tab-button/tab-button.component';
 
 
 
@@ -16,14 +17,16 @@ import { HeaderMenuSearchComponent } from './header-menu-search/header-menu-sear
     InputComponent,
     BotonsComponent,
     HeaderMenuComponent,
-    HeaderMenuSearchComponent
+    HeaderMenuSearchComponent,
+    TabButtonComponent
   ],
   exports:[
     HeaderComponent,
     InputComponent,
     BotonsComponent,
     HeaderMenuComponent,
-    HeaderMenuSearchComponent
+    HeaderMenuSearchComponent,
+    TabButtonComponent
   ],
   imports: [
     CommonModule,

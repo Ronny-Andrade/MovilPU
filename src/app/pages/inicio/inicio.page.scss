@@ -1,5 +1,13 @@
-ion-slides, ion-card {
-    height: 90%;
-    width: 90%;
+ion-slides{
+    ion-slide{
+        height: 250px;
+        width: 100%;
+    }
+    
 }
+ion-card {    
+    height: 125px;
+ }
+
+
 

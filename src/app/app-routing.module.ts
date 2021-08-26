@@ -27,6 +27,15 @@ const routes: Routes = [
     path: 'inicio',
     loadChildren: () => import('./pages/inicio/inicio.module').then( m => m.InicioPageModule)
   },
+  {
+    path: 'menu/info/:productId',
+    loadChildren: () => import('./pages/menu/menuinfo/menuinfo.module').then( m => m.MenuinfoPageModule)
+  },  {
+    path: 'cart-modal',
+    loadChildren: () => import('./pages/cart-modal/cart-modal.module').then( m => m.CartModalPageModule)
+  }
+
+  
 ];
 
 @NgModule({
